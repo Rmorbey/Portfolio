@@ -3,14 +3,15 @@ import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
+import Skills from './components/Skills/Skills';
+// import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
+// import Resume from "./components/Resume/ResumeNew";
 import {
   BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
+  // Route,
+  // Routes,
+  // Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
@@ -49,9 +50,9 @@ function App() {
         <Navbar />
         <ScrollToTop />
         <Home content={data[0]}/>
-        {/* <About content={data[1]}/>
+        <About content={data[1]}/>
         <Skills content={data[2]}/>
-        <Projects content={data[3]}/>
+        {/* <Projects content={data[3]}/>
         <Other content={data[4]}/> */}
         <Footer />
       </div>
