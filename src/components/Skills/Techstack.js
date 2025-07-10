@@ -1,16 +1,16 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import {
-  DiPython,
-  DiJavascript,
-  DiRuby,
-  DiPhp,
-  DiReact,
-  DiGit,
-} from "react-icons/di";
-import {
-  SiTypescript,
-} from "react-icons/si";
+// import {
+//   DiPython,
+//   DiJavascript,
+//   DiRuby,
+//   DiPhp,
+//   DiReact,
+//   DiGit,
+// } from "react-icons/di";
+// import {
+//   SiTypescript,
+// } from "react-icons/si";
 
 function Techstack({content}) {
   return (

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skills from './components/Skills/Skills';
-// import Projects from "./components/Projects/Projects";
+import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 // import Resume from "./components/Resume/ResumeNew";
 import {
@@ -52,8 +52,8 @@ function App() {
         <Home content={data[0]}/>
         <About content={data[1]}/>
         <Skills content={data[2]}/>
-        {/* <Projects content={data[3]}/>
-        <Other content={data[4]}/> */}
+        <Projects content={data[3]}/>
+        {/* <Other content={data[4]}/> */}
         <Footer />
       </div>
     </Router>
