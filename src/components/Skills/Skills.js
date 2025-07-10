@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
@@ -16,7 +16,8 @@ function Skills({content}) {
 		  {content?.fields.skills_header}
 		</h2>
 
-		<Techstack />
+		<Techstack content={content}/>
+
 
 		<h1 className="project-heading">
 		  Tools I use
