@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skills from './components/Skills/Skills';
 import Projects from "./components/Projects/Projects";
+import Other from "./components/Other/Other";
 import Footer from "./components/Footer";
 // import Resume from "./components/Resume/ResumeNew";
 import {
@@ -53,7 +54,7 @@ function App() {
         <About content={data[1]}/>
         <Skills content={data[2]}/>
         <Projects content={data[3]}/>
-        {/* <Other content={data[4]}/> */}
+        <Other content={data[4]}/>
         <Footer />
       </div>
     </Router>

@@ -537,6 +537,18 @@ button:focus {
   font-weight: 500 !important;
   padding-top: 10px !important;
 }
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+  justify-content: center;
+}
 
 /* --------- */
 /* About */
