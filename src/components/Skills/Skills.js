@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
-import Toolstack from "./Toolstack";
+// import Toolstack from "./Toolstack";
 
 function Skills({content}) {
   return (
@@ -19,10 +19,10 @@ function Skills({content}) {
 		<Techstack content={content}/>
 
 
-		<h1 className="project-heading">
+		{/* <h1 className="project-heading">
 		  Tools I use
 		</h1>
-		<Toolstack />
+		<Toolstack /> */}
 	  </Container>
 	</Container>
   );
