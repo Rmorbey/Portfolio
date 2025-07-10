@@ -55,7 +55,7 @@ function App() {
         <Skills content={data[2]}/>
         <Projects content={data[3]}/>
         <Other content={data[4]}/>
-        <Footer />
+        <Footer content={data[5]}/>
       </div>
     </Router>
   );
