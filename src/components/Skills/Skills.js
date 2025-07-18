@@ -6,7 +6,7 @@ import Techstack from "./Techstack";
 
 function Skills({content}) {
   return (
-	<Container fluid className="about-section">
+	<Container fluid className="about-section" id='skills'>
 	  <Particle />
 	  <Container>
 		<h1 className="project-heading">

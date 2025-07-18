@@ -5,7 +5,7 @@ import Particle from "../Particle";
 
 function Other({content}) {
   return (
-	<Container fluid className="project-section">
+	<Container fluid className="project-section" id="other">
 	  <Particle />
 	  <Container>
 		<h1 className="project-heading">
