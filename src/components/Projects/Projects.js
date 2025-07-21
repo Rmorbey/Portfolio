@@ -11,10 +11,14 @@ function Projects({content}) {
         <h1 className="project-heading">
           Projects
         </h1>
-        <h2 className="project-heading" >
+        {/* <h2 className="project-heading" >
           {content?.fields.project_header}
+        </h2> */}
+        <h2 className="project-heading" >
+          A few Projecys past and present that I've worked on.
         </h2>
-        <ProjectCard content={content} />
+        {/* <ProjectCard content={content} /> */}
+        <ProjectCard />
       </Container>
     </Container>
   );

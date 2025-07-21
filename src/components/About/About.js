@@ -21,10 +21,14 @@ function About({content}) {
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               About
             </h1>
-            <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
+            {/* <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
               {content?.fields.about_caption}
+            </h2> */}
+            <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
+              A little about myself
             </h2>
-            <Aboutcard content={content}/>
+            {/* <Aboutcard content={content}/> */}
+            <Aboutcard />
           </Col>
           {/* <Col
             md={5}

@@ -697,7 +697,7 @@ button:focus {
   border: 2px solid #8a49a8;
 }
 
-.like-item {
+/* .like-item {
   padding-top: 10px !important;
   font-size: 1.1em !important;
   font-family: sans-serif !important;
@@ -752,4 +752,4 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
-}
+} */

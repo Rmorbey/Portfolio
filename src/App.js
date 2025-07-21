@@ -1,29 +1,23 @@
 import { React, useState, useEffect } from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Skills from './components/Skills/Skills';
-import Projects from "./components/Projects/Projects";
-import Other from "./components/Other/Other";
-import Footer from "./components/Footer";
-// import Resume from "./components/Resume/ResumeNew";
+import Content from "./components/Content";
+import Resume from "./components/Resume/ResumeNew";
 import {
   BrowserRouter as Router,
-  // Route,
-  // Routes,
-  // Navigate
+  Route,
+  Routes,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from 'axios';
+// import axios from 'axios';
 
 function App() {
   const [load, upadateLoad] = useState(true);
-  const ButterCMS = process.env.REACT_APP_BUTTER_CMS_API_KEY;
-  const [data, setData] = useState([]);
+  // const ButterCMS = process.env.REACT_APP_BUTTER_CMS_API_KEY;
+  // const [data, setData] = useState([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,16 +27,16 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const getData = async () => {
-      axios.get(`https://api.buttercms.com/v2/pages/portfolio/a-portfolio-site?auth_token=${ButterCMS}`).then(res => {
-        setData(res.data.data.fields.my_personal_portfolio);
-      }).catch(err => {
-        console.log(err);
-      })
-    }
-    getData();
-  },);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     axios.get(`https://api.buttercms.com/v2/pages/portfolio/a-portfolio-site?auth_token=${ButterCMS}`).then(res => {
+  //       setData(res.data.data.fields.my_personal_portfolio);
+  //     }).catch(err => {
+  //       console.log(err);
+  //     })
+  //   }
+  //   getData();
+  // },);
 
   return (
     <Router>
@@ -50,12 +44,11 @@ function App() {
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <ScrollToTop />
-        <Home content={data[0]}/>
-        <About content={data[1]}/>
-        <Skills content={data[2]}/>
-        <Projects content={data[3]}/>
-        <Other content={data[4]}/>
-        <Footer content={data[5]}/>
+        <Routes>
+          {/* <Route path="*" element={<Content content={data}/>} /> */}
+          <Route path="*" element={<Content />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
       </div>
     </Router>
   );

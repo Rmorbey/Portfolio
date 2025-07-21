@@ -13,10 +13,12 @@ function Skills({content}) {
 		  Skills
 		</h1>
 		<h2 className="project-heading">
-		  {content?.fields.skills_header}
+		  {/* {content?.fields.skills_header} */}
+		  Some of the technologies I've worked with.
 		</h2>
 
-		<Techstack content={content}/>
+		{/* <Techstack content={content}/> */}
+		<Techstack />
 
 
 		{/* <h1 className="project-heading">
