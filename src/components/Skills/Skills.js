@@ -1,13 +1,11 @@
 import React from "react";
 import { Container} from "react-bootstrap";
-import Particle from "../Particle";
 import Techstack from "./Techstack";
 // import Toolstack from "./Toolstack";
 
 function Skills({content}) {
   return (
-	<Container fluid className="about-section" id='skills'>
-	  <Particle />
+	<Container fluid className="skills-section" id='skills'>
 	  <Container>
 		<h1 className="project-heading">
 		  Skills

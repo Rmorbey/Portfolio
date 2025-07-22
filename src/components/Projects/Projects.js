@@ -1,12 +1,10 @@
 import React from "react";
 import { Container} from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
 
 function Projects({content}) {
   return (
     <Container fluid className="project-section" id="projects">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           Projects

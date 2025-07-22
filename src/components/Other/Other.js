@@ -1,12 +1,10 @@
 import React from "react";
 import { Container} from "react-bootstrap";
 import OtherCard from "./OtherCard";
-import Particle from "../Particle";
 
 function Other({content}) {
   return (
-	<Container fluid className="project-section" id="other">
-	  <Particle />
+	<Container fluid className="skills-section" id="other">
 	  <Container>
 		<h1 className="project-heading">
 		  Other
