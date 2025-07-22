@@ -25,12 +25,11 @@ function NavBar() {
 
   const goToPageAndScroll = async (selector) => {
     await navigate("/");
-    await setTimeout(3000);
+    await setTimeout(5000);
     await scroller.scrollTo(selector, {
       duration: 500,
       smooth: true,
       offset: -75,
-      spy: true
     });
   };
 
@@ -66,44 +65,32 @@ function NavBar() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto" defaultActiveKey="#home">
               <Nav.Item>
-                <Nav.Link>
-                  <ScrollLink to="home" spy={true} offset={-75} duration={500}>
-                    <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-                  </ScrollLink>
-                </Nav.Link>
+                <ScrollLink className='nav-link' to="home" offset={-75} duration={500} smooth={true}>
+                  <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                </ScrollLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <ScrollLink to="about" spy={true} offset={-75} duration={500}>
-                    <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-                  </ScrollLink>
-                </Nav.Link>
+                <ScrollLink className='nav-link' to="about" offset={-75} duration={500} smooth={true}>
+                  <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                </ScrollLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <ScrollLink to="skills" spy={true} offset={-75} duration={500}>
-                    <AiOutlineTool style={{ marginBottom: "2px" }} /> Skills 
-                  </ScrollLink>
-                </Nav.Link>
+                <ScrollLink className='nav-link' to="skills" offset={-75} duration={500} smooth={true}>
+                  <AiOutlineTool style={{ marginBottom: "2px" }} /> Skills 
+                </ScrollLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <ScrollLink to="projects" spy={true} offset={-75} duration={500}>
-                    <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects 
-                  </ScrollLink>
-                </Nav.Link>
+                <ScrollLink className='nav-link' to="projects" offset={-75} duration={500} smooth={true}>
+                  <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects 
+                </ScrollLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <ScrollLink to="other" spy={true} offset={-75} duration={500}>
-                    <AiOutlineHeart style={{ marginBottom: "2px" }} /> Other 
-                  </ScrollLink>
-                </Nav.Link>
+                <ScrollLink className='nav-link' to="other" offset={-75} duration={500} smooth={true}>
+                  <AiOutlineHeart style={{ marginBottom: "2px" }} /> Other 
+                </ScrollLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <RouterLink to="/resume"><CgFileDocument style={{ marginBottom: "2px" }} /> Resume</RouterLink>
-                </Nav.Link>
+                <RouterLink className='nav-link' to="/resume"><CgFileDocument style={{ marginBottom: "2px" }} /> Resume</RouterLink>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
@@ -136,9 +123,7 @@ function NavBar() {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>
-                  <RouterLink to="/resume"><CgFileDocument style={{ marginBottom: "2px" }} /> Resume</RouterLink>
-                </Nav.Link>
+                <RouterLink className='nav-link' to="/resume"><CgFileDocument style={{ marginBottom: "2px" }} /> Resume</RouterLink>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
