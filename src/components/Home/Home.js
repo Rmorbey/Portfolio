@@ -13,19 +13,19 @@ function Home({content}) {
               {/* <h1 className="heading-name">
                 <strong className='main-name'>{content?.fields.landing_caption}</strong>
               </h1>
-              <h2 className='heading-name'>
+              <h2 className='heading-title'>
                 {content?.fields.landing_title}
               </h2>
-              <h3 className='heading-name'>
+              <h3 className='heading-description'>
                 {content?.fields.landing_main_text}
               </h3> */}
               <h1 className="heading-name">
                 <strong className='main-name'>Russell Morbey</strong>
               </h1>
-              <h2 className='heading-name'>
+              <h2 className='heading-title'>
                 Software Engineer.
               </h2>
-              <h3 className='heading-name'>
+              <h3 className='heading-description'>
                 From Acting School and SEN Teaching Assistant, to Software Engineer.
               </h3>
               <div style={{ padding: 50, textAlign: "left" }}>
