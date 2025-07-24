@@ -10,9 +10,13 @@ function Projects({content}) {
           Projects
         </h1>
         <h2 className="about-title" >
-          {content?.fields.project_header}
+          {content?.fields.current_project_header}
         </h2>
-        <ProjectCard content={content} />
+        <ProjectCard projects={content?.fields.current_projects} />
+        <h2 className="about-title" >
+          {content?.fields.past_project_header}
+        </h2>
+        <ProjectCard projects={content?.fields.past_projects} />
       </Container>
     </Container>
   );

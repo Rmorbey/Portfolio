@@ -64,18 +64,18 @@ button:focus {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: rgb(25, 46, 10);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
+  background: rgba(70, 128, 27, 0.959);
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(222, 130, 235, 0.911);
+  background: rgba(105, 190, 40, 0.911);
   border-radius: 12px;
 }
 
@@ -85,7 +85,7 @@ button:focus {
 .sticky {
   background-color: #1b1a2ea9 !important;
   transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+  box-shadow: 0px 10px 10px 0px #09051d2c !important;
   backdrop-filter: blur(15px) !important;
 }
 
@@ -104,7 +104,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: rgba(105, 190, 40) !important;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
