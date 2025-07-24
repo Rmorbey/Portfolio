@@ -343,7 +343,7 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #68187a;
+  background: rgba(70, 128, 27);
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
@@ -351,13 +351,13 @@ button:focus {
 
 .home-social-icons:hover::before {
   transform: scale(1.1);
-  box-shadow: 0 0 15px #801f95;
+  box-shadow: 0 0 15px #69be28;
 }
 
 .home-social-icons:hover {
-  color: #87209e;
-  box-shadow: 0 0 5px #87209e;
-  text-shadow: 0 0 2px #87209e;
+  color: #69be28;
+  box-shadow: 0 0 5px #69be28;
+  text-shadow: 0 0 2px #69be28;
 }
 
 .social-icons {
@@ -367,7 +367,7 @@ button:focus {
 }
 
 .icon-colour {
-  color: #700c86 !important;
+  color: rgba(70, 128, 27) !important;
 }
 
 /* --------- */

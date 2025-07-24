@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Aboutcard from "./AboutCard";
+import { AiFillGithub } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 // import laptopImg from "../../Assets/about.png";
 
 function About({content}) {
@@ -23,6 +25,34 @@ function About({content}) {
               {content?.fields.about_caption}
             </h2>
             <Aboutcard content={content}/>
+          </Col>
+          <Col md={12} className="home-about-social">
+            <h1 className="about-name">FIND ME ON</h1>
+            <h2 className="about_title">
+              Feel free to connect with me.
+            </h2 >
+            <ul className="home-about-social-links">
+              <li className="social-icons">
+                <a
+                  href="https://github.com/Rmorbey/Russell-CV"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <AiFillGithub />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/russell-morbey-706063246/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </li>
+            </ul>
           </Col>
           {/* <Col
             md={5}
