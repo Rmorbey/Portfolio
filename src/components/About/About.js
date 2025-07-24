@@ -19,14 +19,10 @@ function About({content}) {
             <h1 className="about-name">
               About
             </h1>
-            {/* <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
-              {content?.fields.about_caption}
-            </h2> */}
             <h2 className="about-title">
-              A little about myself
+              {content?.fields.about_caption}
             </h2>
-            {/* <Aboutcard content={content}/> */}
-            <Aboutcard />
+            <Aboutcard content={content}/>
           </Col>
           {/* <Col
             md={5}

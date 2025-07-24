@@ -9,11 +9,8 @@ function Other({content}) {
 		<h1 className="about-name">
 		  Other
 		</h1>
-		{/* <h2 className="project-heading" >
-		  {content?.fields.other_header}
-		</h2> */}
 		<h2 className="about-title" >
-		  Some other things I like doing
+		  {content?.fields.other_header}
 		</h2>
 		<OtherCard content={content} />
 	  </Container>

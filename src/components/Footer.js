@@ -11,11 +11,8 @@ function Footer({content}) {
           <h3>Made by Russell Morbey</h3>
         </Col>
         <Col md="2" className="footer-copywright">
-          {/* <a href={content?.fields.buttercms_link}>
+          <a href={content?.fields.buttercms_link}>
             <img src={content?.fields.buttercms_logo} alt="Your Logo" />
-          </a> */}
-          <a href='/'>
-            <img alt="BUTTER CMS LOGO HERE" />
           </a>
         </Col>
         <Col md="4" className="footer-body">

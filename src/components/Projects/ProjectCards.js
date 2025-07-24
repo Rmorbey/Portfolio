@@ -9,76 +9,7 @@ import '/Users/russellmorbey/Projects/Russell-Web-Portfolio/Portfolio/src/style.
 function ProjectCards({content}) {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-      <Col md={4} className="project-card">
-        <Card className="project-card-view">
-          <Card.Img variant="top" alt="card-img" />
-          <Card.Body className="project-card-body">
-            <Card.Title>Palendar</Card.Title>
-            <Card.Text style={{ textAlign: "justify"}}>
-              A calendar to sort out activities with your pals
-            </Card.Text>
-            <div className='button-container'>
-              <Button variant="primary" href='/' target="_blank">
-                <BsGithub /> &nbsp;
-                {'GitHub'}
-              </Button>
-              {"\n"}
-              {"\n"}
-              <Button variant="primary" href='/' target="_blank" style={{ marginLeft: "10px" }}>
-                <CgWebsite /> &nbsp;
-                {"Demo"}
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={4} className="project-card">
-        <Card className="project-card-view">
-          <Card.Img variant="top" alt="card-img" />
-          <Card.Body className="project-card-body">
-            <Card.Title>MakersBnB</Card.Title>
-            <Card.Text style={{ textAlign: "justify" }}>
-              An AirBnB clone made on the Makers Bootcamp.
-            </Card.Text>
-            <div className='button-container'>
-              <Button variant="primary" href='/' target="_blank">
-                <BsGithub /> &nbsp;
-                {'GitHub'}
-              </Button>
-              {"\n"}
-              {"\n"}
-              <Button variant="primary" href='/' target="_blank" style={{ marginLeft: "10px" }}>
-                <CgWebsite /> &nbsp;
-                {"Demo"}
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={4} className="project-card">
-        <Card className="project-card-view">
-          <Card.Img variant="top" alt="card-img" />
-          <Card.Body className="project-card-body">
-            <Card.Title>Bettah!</Card.Title>
-            <Card.Text style={{ textAlign: "justify" }}>
-              A facebook clone made on the Makers Bootcamp.
-            </Card.Text>
-            <div className='button-container'>
-              <Button variant="primary" href='/' target="_blank">
-                <BsGithub /> &nbsp;
-                {'GitHub'}
-              </Button>
-              {"\n"}
-              {"\n"}
-              <Button variant="primary" href='/' target="_blank" style={{ marginLeft: "10px" }}>
-                <CgWebsite /> &nbsp;
-                {"Demo"}
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      {/* {content?.fields.projects.map((project, index) => {
+      {content?.fields.projects.map((project, index) => {
         return (
           <Col md={4} className="project-card" key={index}>
             <Card className="project-card-view">
@@ -104,7 +35,7 @@ function ProjectCards({content}) {
             </Card>
           </Col>
         );
-      })} */}
+      })}
     </Row>
   );
 }

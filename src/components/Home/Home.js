@@ -10,7 +10,7 @@ function Home({content}) {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              {/* <h1 className="heading-name">
+              <h1 className="heading-name">
                 <strong className='main-name'>{content?.fields.landing_caption}</strong>
               </h1>
               <h2 className='heading-title'>
@@ -18,15 +18,6 @@ function Home({content}) {
               </h2>
               <h3 className='heading-description'>
                 {content?.fields.landing_main_text}
-              </h3> */}
-              <h1 className="heading-name">
-                <strong className='main-name'>Russell Morbey</strong>
-              </h1>
-              <h2 className='heading-title'>
-                Software Engineer.
-              </h2>
-              <h3 className='heading-description'>
-                From Acting School and SEN Teaching Assistant, to Software Engineer.
               </h3>
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />

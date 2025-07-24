@@ -5,21 +5,15 @@ import Projects from "./Projects/Projects";
 import Other from "./Other/Other";
 import Footer from "./Footer";
 
-const Content = ( data ) => {
+const Content = ( {content} ) => {
 	return (
 		<div>
-			{/* <Home content={data[0]}/>
-			<About content={data[1]}/>
-			<Skills content={data[2]}/>
-			<Projects content={data[3]}/>
-			<Other content={data[4]}/>
-			<Footer content={data[5]}/> */}
-			<Home />
-			<About />
-			<Skills />
-			<Projects />
-			<Other />
-			<Footer />
+			<Home content={content[0]}/>
+			<About content={content[1]}/>
+			<Skills content={content[2]}/>
+			<Projects content={content[3]}/>
+			<Other content={content[4]}/>
+			<Footer content={content[5]}/>
 		</div>
 	);
 };

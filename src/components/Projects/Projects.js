@@ -9,14 +9,10 @@ function Projects({content}) {
         <h1 className="about-name">
           Projects
         </h1>
-        {/* <h2 className="project-heading" >
-          {content?.fields.project_header}
-        </h2> */}
         <h2 className="about-title" >
-          A few Projects past and present that I've worked on.
+          {content?.fields.project_header}
         </h2>
-        {/* <ProjectCard content={content} /> */}
-        <ProjectCard />
+        <ProjectCard content={content} />
       </Container>
     </Container>
   );
