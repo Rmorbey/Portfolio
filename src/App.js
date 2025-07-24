@@ -43,7 +43,7 @@ function App() {
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <Routes>
-          <Route path="*" element={<Content content={data}/>} />
+          <Route path="*" element={<Content content={data} />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>
