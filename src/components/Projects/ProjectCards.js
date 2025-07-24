@@ -14,7 +14,7 @@ function ProjectCards({content}) {
           <Card.Img variant="top" alt="card-img" />
           <Card.Body className="project-card-body">
             <Card.Title>Palendar</Card.Title>
-            <Card.Text style={{ textAlign: "justify" }}>
+            <Card.Text style={{ textAlign: "justify"}}>
               A calendar to sort out activities with your pals
             </Card.Text>
             <div className='button-container'>

@@ -7,10 +7,10 @@ function Skills({content}) {
   return (
 	<Container fluid className="skills-section" id='skills'>
 	  <Container>
-		<h1 className="project-heading">
+		<h1 className="about-name">
 		  Skills
 		</h1>
-		<h2 className="project-heading">
+		<h2 className="about-title">
 		  {/* {content?.fields.skills_header} */}
 		  Some of the technologies I've worked with.
 		</h2>

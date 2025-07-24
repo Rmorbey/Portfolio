@@ -377,6 +377,18 @@ button:focus {
 /* About */
 /* --------- */
 
+.about-name {
+  font-size: 2.1em;
+  padding-bottom: 20px;
+  color: #69be28;
+}
+
+.about-title {
+  font-size: 1.5em;
+  padding-bottom: 10px;
+  color: #fff
+}
+
 .about-section {
   position: relative !important;
   padding-top: 150px !important;
@@ -399,7 +411,7 @@ button:focus {
   box-shadow: 4px 5px 4px 3px rgba(105,190,40, 0.137) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
-  color: rgb(255,255,255)
+  color: rgba(165,172,175)
 }
 
 @media (max-width: 767px) {
@@ -422,7 +434,7 @@ button:focus {
 
 .quote-card-view {
   border: none !important;
-  color: white !important;
+  color: rgba(165,172,175) !important;
   background-color: transparent !important;
 }
 
@@ -472,7 +484,7 @@ button:focus {
 
 .project-card-view {
   box-shadow: 0 4px 5px 3px #69be28 !important;
-  color: white !important;
+  color: rgba(165,172,175) !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;

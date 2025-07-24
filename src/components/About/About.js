@@ -16,13 +16,13 @@ function About({content}) {
               paddingBottom: "50px",
             }}
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+            <h1 className="about-name">
               About
             </h1>
             {/* <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
               {content?.fields.about_caption}
             </h2> */}
-            <h2 style={{ fontSize: "1.5em", paddingBottom: "10px" }}>
+            <h2 className="about-title">
               A little about myself
             </h2>
             {/* <Aboutcard content={content}/> */}
