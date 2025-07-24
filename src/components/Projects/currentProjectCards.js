@@ -6,10 +6,10 @@ import { BsGithub } from "react-icons/bs";
 import { Row, Col } from "react-bootstrap";
 import '/Users/russellmorbey/Projects/Russell-Web-Portfolio/Portfolio/src/style.css'
 
-function ProjectCards({projects}) {
+function ProjectCards({content}) {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-      {projects.map((project, index) => {
+      {content?.fields.current_projects.map((project, index) => {
         return (
           <Col md={4} className="project-card" key={index}>
             <Card className="project-card-view">

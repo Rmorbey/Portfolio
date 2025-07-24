@@ -1,6 +1,7 @@
 import React from "react";
 import { Container} from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+import CurrentProjectCard from "./currentProjectCards";
+import PastProjectCard from "./pastProjectCards";
 
 function Projects({content}) {
   return (
@@ -12,11 +13,11 @@ function Projects({content}) {
         <h2 className="about-title" >
           {content?.fields.current_project_header}
         </h2>
-        <ProjectCard projects={content?.fields.current_projects} />
+        <CurrentProjectCard content={content} />
         <h2 className="about-title" >
           {content?.fields.past_project_header}
         </h2>
-        <ProjectCard projects={content?.fields.past_projects} />
+        <PastProjectCard content={content} />
       </Container>
     </Container>
   );
