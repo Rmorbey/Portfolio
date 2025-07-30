@@ -1,12 +1,12 @@
 <h2 align="center">
   Portfolio Website - v1.0<br/>
-  <a href="https://github.com/Rmorbey/Russell-CV" target="_blank">PLACEHOLDER</a>
+  <a href="www.russellmorbey.co.uk" target="_blank">russellmorbey.co.uk</a>
 </h2>
 <br/>
 
 ## Built With
 
-My personal portfolio <a href="https://github.com/Rmorbey/Russell-CV" target="_blank">PLACEHOLDER</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio <a href="www.russellmorbey.co.uk" target="_blank">russellmorbey.co.uk</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
