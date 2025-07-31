@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { Row, Col } from "react-bootstrap";
-import '/Users/russellmorbey/Projects/Russell-Web-Portfolio/Portfolio/src/style.css'
 
 function ProjectCards({content}) {
   return (

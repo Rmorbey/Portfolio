@@ -2,7 +2,6 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Row, Col } from "react-bootstrap";
-import '/Users/russellmorbey/Projects/Russell-Web-Portfolio/Portfolio/src/style.css'
 
 function OtherCard({content}) {
   return (
