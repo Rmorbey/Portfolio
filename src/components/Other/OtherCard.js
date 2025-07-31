@@ -17,10 +17,10 @@ function OtherCard({content}) {
 				  {other.other_description}
 				</Card.Text>
 				<div className='button-container'>
-				  <Button variant="primary" href={other.link} target="_blank">
+				  {/* <Button variant="primary" href={other.link} target="_blank">
 					&nbsp;
 					{'Link'}
-				  </Button>
+				  </Button> */}
 				</div>
 			  </Card.Body>
 			</Card>

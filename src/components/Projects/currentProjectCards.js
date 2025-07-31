@@ -25,10 +25,10 @@ function ProjectCards({content}) {
                   </Button>
                   {"\n"}
                   {"\n"}
-                  <Button variant="primary" href={project.demo} target="_blank" style={{ marginLeft: "10px" }}>
+                  {/* <Button variant="primary" href={project.demo} target="_blank" style={{ marginLeft: "10px" }}>
                     <CgWebsite /> &nbsp;
                     {"Demo"}
-                  </Button>
+                  </Button> */}
                 </div>
               </Card.Body>
             </Card>
