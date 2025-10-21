@@ -1,9 +1,10 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { CgWebsite } from "react-icons/cg";
 import { Row, Col } from "react-bootstrap";
+import OptimizedImage from "../OptimizedImage";
 
 function ProjectCards({content}) {
   return (
@@ -12,23 +13,33 @@ function ProjectCards({content}) {
         return (
           <Col md={4} className="project-card" key={index}>
             <Card className="project-card-view">
-              <Card.Img variant="top" src={project.project_image} alt="card-img" />
-              <Card.Body className="project-card-body">
+                     <OptimizedImage
+                       src={project.project_image} 
+                       alt={`${project.project_title} project screenshot`}
+                       className="card-img-top"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       maxWidth={400}
+                       maxHeight={300}
+                       style={{ marginBottom: '20px' }}
+                     />
+                     <Card.Body className="project-card-body">
                 <Card.Title>{project.project_title}</Card.Title>
                 <Card.Text style={{ textAlign: "justify" }}>
                   {project.project_description}
                 </Card.Text>
                 <div className='button-container'>
-                  <Button variant="primary" href={project.github_url} target="_blank">
-                    <BsGithub /> &nbsp;
-                    {'GitHub'}
-                  </Button>
-                  {"\n"}
-                  {"\n"}
-                  {/* <Button variant="primary" href={project.demo} target="_blank" style={{ marginLeft: "10px" }}>
-                    <CgWebsite /> &nbsp;
-                    {"Demo"}
-                  </Button> */}
+                  {project.github_url && project.github_url.trim() !== '' && (
+                    <Button variant="primary" href={project.github_url} target="_blank">
+                      <BsGithub /> &nbsp;
+                      {'GitHub'}
+                    </Button>
+                  )}
+                  {project.demo && project.demo.trim() !== '' && (
+                    <Button variant="primary" href={project.demo} target="_blank" style={{ marginLeft: "10px" }}>
+                      <CgWebsite /> &nbsp;
+                      {"Demo"}
+                    </Button>
+                  )}
                 </div>
               </Card.Body>
             </Card>

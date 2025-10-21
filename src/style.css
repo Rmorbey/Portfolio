@@ -160,29 +160,77 @@ button:focus {
 
 .navbar-nav .nav-link {
   color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
+  padding-right: 1.5rem !important;
+  padding-left: 0.5rem !important;
 }
 
 .nav-link {
   padding: 0.8rem 1rem !important;
 }
 
-.nav-link:hover {
-  padding: 0.8rem 1rem !important;
-  color: #a5acaf!important;
-  cursor: pointer !important;
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    padding: 0.8rem 1rem !important;
+    color: #a5acaf!important;
+    cursor: pointer !important;
+  }
+}
+
+.nav-link.active,
+.nav-link:active,
+.nav-link:focus {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: white !important;
+  background-color: transparent !important;
 }
 
 @media (max-width: 767px) {
   .nav-link {
-    padding: 0.7rem 1rem !important;
+    padding: 0.7rem 1.5rem 0.7rem 0.5rem !important;
+    color: white !important;
+  }
+  
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link:focus,
+  .nav-link.active {
+    color: white !important;
+    background-color: transparent !important;
+  }
+  
+  .navbar-nav .nav-link {
+    color: white !important;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:active,
+  .navbar-nav .nav-link:focus,
+  .navbar-nav .nav-link.active {
+    color: white !important;
+    background-color: transparent !important;
+  }
+}
+
+/* Ensure touch devices don't get hover effects */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link:hover {
+    color: white !important;
+    background-color: transparent !important;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: white !important;
+    background-color: transparent !important;
   }
 }
 
 .navbar-nav .nav-item {
   position: relative;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .navbar-nav .nav-item a {
@@ -215,7 +263,7 @@ button:focus {
 /* --------- */
 
 .home-header {
-  padding-top: 80px !important;
+  padding-top: 40px !important;
 }
 
 .home-section {
@@ -291,19 +339,19 @@ button:focus {
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-bottom: 40px !important;
+  padding-top: 40px !important;
 }
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
+  padding-top: 50px !important;
   padding-bottom: 20px !important;
   text-align: center;
 }
 
 .home-about-body {
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: 1.2em !important;
   text-align: left;
 }
@@ -388,7 +436,7 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 30px !important;
   padding-bottom: 30px !important;
   color: white !important;
 }
@@ -451,7 +499,7 @@ button:focus {
 
 .skills-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
 
@@ -461,13 +509,13 @@ button:focus {
 
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
 
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
   height: auto !important;
@@ -591,6 +639,15 @@ button:focus {
   .footer-body {
     text-align: center !important;
   }
+  
+  .footer {
+    min-height: 120px !important;
+    max-height: 140px !important;
+  }
+  
+  .footer-row {
+    min-height: 100px !important;
+  }
 }
 
 .footer h3 {
@@ -611,14 +668,14 @@ button:focus {
 
 .resume-section {
   position: relative !important;
-  padding-top: 110px !important;
+  padding-top: 100px !important;
   padding-bottom: 30px !important;
   color: white !important;
 }
 
 .resume {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   justify-content: center;
 }
 

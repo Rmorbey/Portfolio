@@ -25,12 +25,50 @@ function NavBar() {
 
   const goToPageAndScroll = async (selector) => {
     await navigate("/");
-    await setTimeout(5000);
-    await scroller.scrollTo(selector, {
-      duration: 500,
-      smooth: true,
-      offset: -75,
-    });
+    
+    // Wait for the page to load and components to be available
+    const waitForElement = (selector, timeout = 10000) => {
+      return new Promise((resolve, reject) => {
+        const startTime = Date.now();
+        
+        const checkElement = () => {
+          const element = document.getElementById(selector);
+          if (element) {
+            resolve(element);
+          } else if (Date.now() - startTime > timeout) {
+            reject(new Error(`Element with id "${selector}" not found within ${timeout}ms`));
+          } else {
+            setTimeout(checkElement, 100);
+          }
+        };
+        
+        checkElement();
+      });
+    };
+    
+    try {
+      await waitForElement(selector);
+      // Small additional delay to ensure lazy components are fully rendered
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      await scroller.scrollTo(selector, {
+        duration: 500,
+        smooth: true,
+        offset: -75,
+      });
+           } catch (error) {
+             if (process.env.NODE_ENV === 'development') {
+               console.warn(`Could not scroll to ${selector}:`, error);
+             }
+             // Fallback: try to scroll anyway after a reasonable delay
+      setTimeout(() => {
+        scroller.scrollTo(selector, {
+          duration: 500,
+          smooth: true,
+          offset: -75,
+        });
+      }, 1000);
+    }
   };
 
   function scrollHandler() {
@@ -63,7 +101,7 @@ function NavBar() {
         </Navbar.Toggle>
         {location !== "resume" ? (
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav className="ms-auto">
               <Nav.Item>
                 <ScrollLink className='nav-link' to="home" offset={-75} duration={500} smooth={true}>
                   <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -96,7 +134,7 @@ function NavBar() {
           </Navbar.Collapse>
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav className="ms-auto">
               <Nav.Item>
                 <Nav.Link onClick={() => goToPageAndScroll("home")}>
                   <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
