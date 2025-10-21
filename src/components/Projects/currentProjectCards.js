@@ -4,9 +4,13 @@ import Button from "react-bootstrap/Button";
 import { BsGithub } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import { Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import OptimizedImage from "../OptimizedImage";
 
 function ProjectCards({content}) {
+  const navigate = useNavigate();
+  
+  
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
       {content?.fields.current_projects.map((project, index) => {
@@ -38,6 +42,21 @@ function ProjectCards({content}) {
                     <Button variant="primary" href={project.demo} target="_blank" style={{ marginLeft: "10px" }}>
                       <CgWebsite /> &nbsp;
                       {"Demo"}
+                    </Button>
+                  )}
+                  {/* Special case for Ready & Raising project */}
+                  {project.project_title && (
+                    project.project_title.toLowerCase().includes('ready') || 
+                    project.project_title.toLowerCase().includes('raising') ||
+                    project.project_title.toLowerCase().includes('fundraising')
+                  ) && (
+                    <Button 
+                      variant="primary" 
+                      onClick={() => navigate('/ReadyRaising')} 
+                      style={{ marginLeft: "10px" }}
+                    >
+                      <CgWebsite /> &nbsp;
+                      {"View App"}
                     </Button>
                   )}
                 </div>

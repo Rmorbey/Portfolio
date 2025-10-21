@@ -3,6 +3,7 @@ import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar/Navbar";
 import Content from "./components/Content";
 import { LazyResume } from "./components/LazyComponent";
+import FundraisingApp from "./fundraising/FundraisingApp";
 import {
   BrowserRouter as Router,
   Route,
@@ -33,6 +34,7 @@ function App() {
         setData(response.data.data.fields.my_personal_portfolio);
       } catch (error) {
         // Handle error gracefully - could add error state here
+        console.error('Failed to fetch portfolio data:', error);
         if (process.env.NODE_ENV === 'development') {
           console.error('Failed to fetch portfolio data:', error);
         }
@@ -45,10 +47,24 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
         <Routes>
-          <Route path="*" element={<Content content={data} />} />
-          <Route path="/resume" element={<LazyResume />} />
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Content content={data} />
+            </>
+          } />
+          <Route path="/ReadyRaising/*" element={
+            <div style={{ height: '100vh', overflow: 'hidden' }}>
+              <FundraisingApp />
+            </div>
+          } />
+          <Route path="/resume" element={
+            <>
+              <Navbar />
+              <LazyResume />
+            </>
+          } />
         </Routes>
       </div>
     </Router>
