@@ -51,10 +51,12 @@ const ActivityPhotos = memo(function ActivityPhotos({ photos }) {
             style={{
               width: '100%',
               height: '200px',
-              objectFit: 'cover',
+              objectFit: 'contain',
+              objectPosition: 'center',
               cursor: 'pointer',
               borderRadius: '8px',
-              marginBottom: '12px'
+              marginBottom: '12px',
+              backgroundColor: '#1a1a1a'
             }}
           />
         );
