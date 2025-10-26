@@ -33,7 +33,9 @@ const FundraisingData = ({ showHeader = true, compact = false }) => {
   const fetchDonations = async () => {
     try {
       const data = await fundraisingAPI.getDonations();
-      setDonations(data.donations || []);
+      const donationsData = data.donations || [];
+      console.log('🔍 FundraisingData - Donations received from API (in order):', donationsData.map((d, i) => `${i + 1}. ${d.donor_name} - £${d.amount} (${d.date})`));
+      setDonations(donationsData);
     } catch (err) {
       console.error('Error fetching donations:', err);
       // Don't set error for donations as it's not critical

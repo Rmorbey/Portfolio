@@ -30,7 +30,9 @@ const FundraisingFooter = memo(function FundraisingFooter() {
               }
 
               if (donationsResponse.status === 'fulfilled') {
-                setDonations(donationsResponse.value.donations || []);
+                const donationsData = donationsResponse.value.donations || [];
+                console.log('🔍 Donations received from API (in order):', donationsData.map((d, i) => `${i + 1}. ${d.donor_name} - £${d.amount} (${d.date})`));
+                setDonations(donationsData);
               }
 
       setLoading(false);
@@ -77,14 +79,16 @@ const FundraisingFooter = memo(function FundraisingFooter() {
       return 'No recent donations yet. Be the first to donate!';
     }
 
-    // Take the first 6 donations and reverse to show oldest first (chronological order)
+    // Take the first 6 donations and reverse to show oldest first, but most recent gets sparkles
     const displayDonations = donations.slice(0, 6).reverse();
+    
+    console.log('📺 Final display order (after reverse):', displayDonations.map((d, i) => `${i + 1}. ${d.donor_name} - £${d.amount} (${d.date})`));
 
     const donationTexts = displayDonations.map((donation, index) => {
       const amount = formatCurrency(donation.amount);
       const donor = donation.donor_name || 'Anonymous';
       const message = formatDonationMessage(donation);
-      const isMostRecent = index === displayDonations.length - 1; // Last donation gets sparkle
+      const isMostRecent = index === displayDonations.length - 1; // Last donation gets sparkle (most recent)
       
       // Only show message if it exists
       const messageText = message ? `: "${message}"` : '';
