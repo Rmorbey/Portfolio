@@ -184,7 +184,7 @@ const ActivityMap = memo(function ActivityMap({ activity, apiKey }) {
   const animationRef = useRef(null);
 
   const initializeMap = useCallback(async () => {
-    if (!mapRef.current || mapInitialized || !window.L || (!apiKey && !process.env.REACT_APP_STRAVA_API_KEY)) return;
+    if (!mapRef.current || mapInitialized || !window.L || (!apiKey && !process.env.REACT_APP_ACTIVITY_API_KEY)) return;
 
     try {
       // Validate map container
@@ -259,7 +259,7 @@ const ActivityMap = memo(function ActivityMap({ activity, apiKey }) {
         // Override createTile to handle authentication properly
         customTileLayer.createTile = function(coords, done) {
           const tile = document.createElement('img');
-          const stravaApiKey = apiKey || process.env.REACT_APP_STRAVA_API_KEY;
+          const activityApiKey = apiKey || process.env.REACT_APP_ACTIVITY_API_KEY;
           
           // Set up error handling
           tile.onerror = () => {
@@ -277,11 +277,11 @@ const ActivityMap = memo(function ActivityMap({ activity, apiKey }) {
           tile.style.height = '256px';
           
           // Fetch tile with proper authentication
-          const tileUrl = `https://api.russellmorbey.co.uk/api/strava-integration/map-tiles/${coords.z}/${coords.x}/${coords.y}?style=dark`;
+          const tileUrl = `https://api.russellmorbey.co.uk/api/activity-integration/map-tiles/${coords.z}/${coords.x}/${coords.y}?style=dark`;
           
           fetch(tileUrl, {
             headers: {
-              'X-API-Key': stravaApiKey
+              'X-API-Key': activityApiKey
             }
           })
           .then(response => {
@@ -420,7 +420,7 @@ const ActivityMap = memo(function ActivityMap({ activity, apiKey }) {
   useEffect(() => {
     // Wait for Leaflet to be available
     const checkLeaflet = () => {
-      if (window.L && activity.map?.polyline && !mapInitialized && (apiKey || process.env.REACT_APP_STRAVA_API_KEY)) {
+      if (window.L && activity.map?.polyline && !mapInitialized && (apiKey || process.env.REACT_APP_ACTIVITY_API_KEY)) {
         initializeMap();
       } else if (!window.L) {
         // Retry after a short delay if Leaflet isn't loaded yet

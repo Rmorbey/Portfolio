@@ -15,7 +15,7 @@ export const useStravaActivities = (limit = null) => {
       const data = await stravaAPI.getFeed(limit);
       setActivities(data.activities || []);
     } catch (err) {
-      console.error('Error fetching Strava activities:', err);
+      console.error('Error fetching activities:', err);
       setError(err.message);
     } finally {
       setLoading(false);

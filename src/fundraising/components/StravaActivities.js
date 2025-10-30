@@ -21,7 +21,7 @@ const StravaActivities = ({ limit = 20, showHeader = true }) => {
       const data = await stravaAPI.getFeed(limit);
       setActivities(data.activities || []);
     } catch (err) {
-      console.error('Error fetching Strava activities:', err);
+      console.error('Error fetching activities:', err);
       setError(apiUtils.formatError(err));
     } finally {
       setLoading(false);

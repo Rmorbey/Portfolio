@@ -6,7 +6,7 @@ class ApiService {
   constructor() {
     this.baseURL = API_BASE_URL;
     this.apiKeys = {
-      strava: process.env.REACT_APP_STRAVA_API_KEY,
+      activity: process.env.REACT_APP_ACTIVITY_API_KEY,
       fundraising: process.env.REACT_APP_FUNDRAISING_API_KEY
     };
   }
@@ -32,36 +32,53 @@ class ApiService {
     return await response.json();
   }
 
-  // Strava API calls
-  async getStravaFeed(params = {}) {
+  // Activity Integration API calls
+  async getActivityFeed(params = {}) {
     const queryString = new URLSearchParams(params).toString();
-    const endpoint = `/api/strava-integration/feed${queryString ? `?${queryString}` : ''}`;
+    const endpoint = `/api/activity-integration/feed${queryString ? `?${queryString}` : ''}`;
     
     return this.makeRequest(endpoint, {
       headers: {
-        'X-API-Key': this.apiKeys.strava
+        'X-API-Key': this.apiKeys.activity
       }
     });
+  }
+
+  async getActivityHealth() {
+    return this.makeRequest('/api/activity-integration/health');
+  }
+
+  async getActivityMetrics() {
+    return this.makeRequest('/api/activity-integration/metrics', {
+      headers: {
+        'X-API-Key': this.apiKeys.activity
+      }
+    });
+  }
+
+  async getActivityCacheStatus() {
+    return this.makeRequest('/api/activity-integration/cache-status', {
+      headers: {
+        'X-API-Key': this.apiKeys.activity
+      }
+    });
+  }
+
+  // Legacy method names for backward compatibility
+  async getStravaFeed(params = {}) {
+    return this.getActivityFeed(params);
   }
 
   async getStravaHealth() {
-    return this.makeRequest('/api/strava-integration/health');
+    return this.getActivityHealth();
   }
 
   async getStravaMetrics() {
-    return this.makeRequest('/api/strava-integration/metrics', {
-      headers: {
-        'X-API-Key': this.apiKeys.strava
-      }
-    });
+    return this.getActivityMetrics();
   }
 
   async getStravaCacheStatus() {
-    return this.makeRequest('/api/strava-integration/cache-status', {
-      headers: {
-        'X-API-Key': this.apiKeys.strava
-      }
-    });
+    return this.getActivityCacheStatus();
   }
 
   // Fundraising API calls
@@ -99,6 +116,7 @@ class ApiService {
 }
 
 // Legacy API classes for backward compatibility
+// Note: These maintain old naming but use new activity-integration endpoints
 class StravaAPI {
   constructor(apiService) {
     this.apiService = apiService;
@@ -107,24 +125,33 @@ class StravaAPI {
   async getFeed(limit = null) {
     try {
       const params = limit ? { limit } : {};
-      const data = await this.apiService.getStravaFeed(params);
+      const data = await this.apiService.getActivityFeed(params);
       // console.log('API response - Activities count:', data.activities?.length || 0);
       return data;
     } catch (error) {
-      console.error('Error fetching Strava activities:', error);
+      console.error('Error fetching activities:', error);
       throw error;
     }
   }
 
   async getActivity(activityId) {
     try {
-      return await this.apiService.makeRequest(`/api/strava-integration/activity/${activityId}`, {
+      return await this.apiService.makeRequest(`/api/activity-integration/activity/${activityId}`, {
         headers: {
-          'X-API-Key': this.apiService.apiKeys.strava
+          'X-API-Key': this.apiService.apiKeys.activity
         }
       });
     } catch (error) {
-      console.error('Error fetching Strava activity:', error);
+      console.error('Error fetching activity:', error);
+      throw error;
+    }
+  }
+
+  async healthCheck() {
+    try {
+      return await this.apiService.getActivityHealth();
+    } catch (error) {
+      console.error('Error checking activity service health:', error);
       throw error;
     }
   }
