@@ -15,25 +15,28 @@ const LandingPage = memo(function LandingPage() {
     let runCount = 0;
     let rideCount = 0;
 
-    // console.log('=== DISTANCE CALCULATION DEBUG ===');
-    // console.log('Total activities to process:', activities.length);
+    console.log('=== DISTANCE CALCULATION DEBUG ===');
+    console.log('Total activities to process:', activities.length);
 
     activities.forEach((activity, index) => {
-      if (activity.type === 'Run' && activity.distance_km) {
-        runningTotal += activity.distance_km;
+      // Use the same distance field logic as RecentActivities.js
+      const distance = activity.distance_km || (activity.distance / 1000);
+      
+      if (activity.type === 'Run' && distance) {
+        runningTotal += distance;
         runCount++;
-        // console.log(`Run ${runCount}: ${activity.name} - ${activity.distance_km}km (${activity.date})`);
-      } else if (activity.type === 'Ride' && activity.distance_km) {
-        cyclingTotal += activity.distance_km;
+        console.log(`Run ${runCount}: ${activity.name} - ${distance}km (${activity.date})`);
+      } else if (activity.type === 'Ride' && distance) {
+        cyclingTotal += distance;
         rideCount++;
-        // console.log(`Ride ${rideCount}: ${activity.name} - ${activity.distance_km}km (${activity.date})`);
+        console.log(`Ride ${rideCount}: ${activity.name} - ${distance}km (${activity.date})`);
       }
     });
 
-    // console.log('Running total:', runningTotal, 'km from', runCount, 'runs');
-    // console.log('Cycling total:', cyclingTotal, 'km from', rideCount, 'rides');
-    // console.log('Grand total:', runningTotal + cyclingTotal, 'km');
-    // console.log('=== END DISTANCE CALCULATION DEBUG ===');
+    console.log('Running total:', runningTotal, 'km from', runCount, 'runs');
+    console.log('Cycling total:', cyclingTotal, 'km from', rideCount, 'rides');
+    console.log('Grand total:', runningTotal + cyclingTotal, 'km');
+    console.log('=== END DISTANCE CALCULATION DEBUG ===');
 
     setTotalDistance({
       running: runningTotal,
